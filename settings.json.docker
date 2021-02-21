@@ -178,15 +178,14 @@
    * https://www.npmjs.com/package/ueberdb2
    */
 
-  "dbType": "${DB_TYPE:dirty}",
+  "dbType": "${DB_TYPE:mysql}",
   "dbSettings": {
     "host":     "${DB_HOST}",
     "port":     "${DB_PORT}",
     "database": "${DB_NAME}",
     "user":     "${DB_USER}",
     "password": "${DB_PASS}",
-    "charset":  "${DB_CHARSET}",
-    "filename": "${DB_FILENAME:var/dirty.db}"
+    "charset":  "${DB_CHARSET}"
   },
 
   /*
@@ -203,7 +202,7 @@
     "noColors":         "${PAD_OPTIONS_NO_COLORS:false}",
     "showControls":     "${PAD_OPTIONS_SHOW_CONTROLS:true}",
     "showChat":         "${PAD_OPTIONS_SHOW_CHAT:true}",
-    "showLineNumbers":  "${PAD_OPTIONS_SHOW_LINE_NUMBERS:true}",
+    "showLineNumbers":  "${PAD_OPTIONS_SHOW_LINE_NUMBERS:false}",
     "useMonospaceFont": "${PAD_OPTIONS_USE_MONOSPACE_FONT:false}",
     "userName":         "${PAD_OPTIONS_USER_NAME:false}",
     "userColor":        "${PAD_OPTIONS_USER_COLOR:false}",
@@ -429,7 +428,7 @@
     "admin": {
       // 1) "password" can be replaced with "hash" if you install ep_hash_auth
       // 2) please note that if password is null, the user will not be created
-      "password": "${ADMIN_PASSWORD}",
+      "password": "${ADMIN_PASSWORD}:password",
       "is_admin": true
     },
     "user": {
